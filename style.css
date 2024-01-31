@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+body {
+  background-color: pink;
+}
+
 .container {
   height: 100dvh;
   display: flex;
@@ -17,6 +21,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  width: 100dvw;
+}
+
+.typing {
+  display: inline-block;
+  max-width: 90%;
+}
+
+.title {
+  word-wrap: break-word;
+  letter-spacing: 1px;
+  font-size: 20px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+  }
 }
 
 .image {
@@ -43,7 +69,10 @@
   position: absolute;
   font-size: 16px;
   font-weight: bold;
-  transition: all ease 0.3s;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  opacity: 0;
+  display: block;
 }
 
 .btn-yes {
@@ -51,8 +80,22 @@
   color: rgb(255, 255, 255);
 }
 
+.btn-yes:hover {
+  transform: scale(1.1);
+  background-color: rgb(13, 228, 85);
+}
+
 .btn-no {
   background: rgb(243, 22, 22);
   color: rgb(255, 255, 255);
   left: 24px;
+}
+
+.btn-no:hover {
+  transform: scale(1.1);
+  background-color: rgb(223, 15, 15);
+}
+
+.fadeIn {
+  opacity: 1;
 }
