@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #000;
+  margin: 30px 0px;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all ease 0.3s;
+}
+
+.btn-yes {
+  background: rgb(16, 243, 92);
+  color: rgb(255, 255, 255);
+}
+
+.btn-no {
+  background: rgb(243, 22, 22);
+  color: rgb(255, 255, 255);
+  left: 24px;
+}
