@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll(".btn");
 const title = document.querySelector(".title");
-const image = document.querySelector(".image");
+const image = document.getElementById("image");
+const image2 = document.getElementById("image2");
 
 const question = [
   "Haii Aku Mau Tanya Sesuatu...",
@@ -27,19 +28,22 @@ function getRandomX() {
   return coba;
 }
 function getRandomY() {
-  const minDiff = 40;
+  const minDiff = 30;
   let coba;
 
   do {
-    coba = Math.floor(Math.random() * 100) + 100;
+    coba = Math.floor(Math.random() * 80) + 50;
   } while (Math.abs(coba - yTes) < minDiff);
+
+  console.log(coba, yTes);
 
   yTes = coba;
   return coba;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  title.style.animation = "typing 3.5s steps(40, end)";
+  title.style.animation = "typing 3s steps(40, end)";
+  image.setAttribute("src", "image/gambar1.png");
   if (countTitle === 0) {
     title.innerHTML = question[countTitle];
     buttons.forEach((button) => {
@@ -58,15 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (button.id == "btn-yes") {
       }
     });
-  }, 3500);
+  }, 3000);
 });
 
 function updateButtonDisplay() {
   if (countTitle != 5) {
-    title.style.animation = "typing 3.5s steps(40, end)";
+    title.style.animation = "typing 3s steps(40, end)";
     setTimeout(() => {
       title.style.animation = "none";
-    }, 3500);
+    }, 3000);
   }
   buttons.forEach((button) => {
     if (button.id === "btn-no") {
@@ -76,11 +80,28 @@ function updateButtonDisplay() {
       button.style.display = countTitle >= 6 ? "none" : "block";
     }
   });
+  if (countTitle == 2) {
+    image.setAttribute("src", "image/gambar3.png");
+  }
+  if (countTitle == 3) {
+    image.setAttribute("src", "image/gambar4.png");
+  }
+  if (countTitle == 4) {
+    image.setAttribute("src", "image/gambar5.png");
+  }
+  if (countTitle == 5) {
+    image.setAttribute("src", "image/gambar7.png");
+  }
+  if (countTitle == 6) {
+    image.setAttribute("src", "image/gambar6.png");
+    image2.style.display = "block";
+    image2.setAttribute("src", "image/gambar8.png");
+  }
 }
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    console.log(countTitle);
+    image.setAttribute("src", "");
 
     if (countTitle >= 4) {
       button.style.opacity = 1;
@@ -107,7 +128,7 @@ buttons.forEach((button) => {
         setTimeout(() => {
           button.style.transition = "all 0.5s";
           button.classList.add("fadeIn");
-        }, 3500);
+        }, 3000);
       }
     } else if (button.id == "btn-no") {
       console.log("no di klik");
